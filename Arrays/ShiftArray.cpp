@@ -20,7 +20,10 @@ void rotateArray(int arr[], int size, int shift){
     //2.shift array elements by finalShift places
 
     for(int i = size-1; i>= 0; i--){
-        arr[i] = arr[i-finalShift];
+        if(i - finalShift >= 0){
+            arr[i] = arr[i-finalShift];
+        }
+        
     }
 
     //3.copy temp elements into original array
