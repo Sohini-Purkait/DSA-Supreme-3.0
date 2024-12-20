@@ -9,19 +9,22 @@ public:
     int age;
     string name;
     int nos;
+    int *gpa;
 
     //Constructor: Default ctor
     Student(){
         cout << "Student default constructor called" << endl;
+        delete this->gpa;
     }
 
     //ctor: Parameterised ctor
-    Student(int id, int age, string name, int nos){
+    Student(int id, int age, string name, int nos, float gpa){
         cout << "Student Parameterised constructor called" << endl;
         this->id = id;
         this->age = age;
         this->name = name;
         this->nos = nos;
+        this->gpa = new int(gpa);
     }
 
     //ctor: Copy ctor
@@ -93,10 +96,11 @@ int main(){
     // cout << C.name << " " << A.name << endl;
 
     //Dynamic allocation, or Student pointer
-    Student *A = new Student(1, 14, "Love", 7);
+    Student *A = new Student(1, 14, "Love", 7, 9.8);
     cout << A->name << endl;
     cout << A->age << endl;
     A->study();
+    delete A;
 
     
     return 0;
