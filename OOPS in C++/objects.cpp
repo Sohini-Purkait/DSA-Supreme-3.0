@@ -14,7 +14,6 @@ public:
     //Constructor: Default ctor
     Student(){
         cout << "Student default constructor called" << endl;
-        delete this->gpa;
     }
 
     //ctor: Parameterised ctor
@@ -57,6 +56,7 @@ public:
     //Destructor: Default dtor
     ~Student(){
         cout << this->name << " Student default destructor called" << endl;
+        delete this->gpa;
     }
 
 };
