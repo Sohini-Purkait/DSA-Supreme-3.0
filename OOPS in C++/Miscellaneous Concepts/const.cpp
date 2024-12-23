@@ -6,12 +6,15 @@ class abc{
     int *y;
     int z;
 public:
+    // ctor : old style
+    // abc(int _x, int _y, int _z = 0){
+    //     x = _x;
+    //     y = new int(_y);
+    //     z = _z;
+    // }
 
-    abc(int _x, int _y, int _z = 0){
-        x = _x;
-        y = new int(_y);
-        z = _z;
-    }
+    // initialization list 
+    abc(int _x, int _y, int _z = 0) : x(_x), y(new int(_y)), z(_z) {}
 
     int getX() const{
         x = 50; // ERROR x cant be modified since it is in const function but can be modified if mutable keyword is used
@@ -19,7 +22,7 @@ public:
     }
 
     void set(int _val){
-        x = _val;
+        x = _val; 
     }
 
     int getY() const{
