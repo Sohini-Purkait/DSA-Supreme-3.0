@@ -24,7 +24,7 @@ void print(Node* head){
 }
 
 //function to insert at head -> returns head of LL after insertion
-Node* insertAtHead(int value, Node* head, Node* tail){
+Node* insertAtHead(int value, Node* &head, Node* &tail){
     // LL is empty -> head and tail both pointing to NULL
     // it means we are creating first node of LL
     if(head == NULL && tail == NULL){
