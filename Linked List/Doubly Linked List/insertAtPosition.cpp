@@ -104,6 +104,17 @@ void printReverse(Node* tail){
     cout << "NULL" << endl;
 }
 
+bool searchElement(Node* head, int target){
+    Node* temp = head;
+    while(temp != NULL){
+        if(temp -> data == target){
+            return true;
+        }
+        temp = temp -> next;
+    }
+    return false;
+}
+
 int main(){
 
     Node* head = NULL;
