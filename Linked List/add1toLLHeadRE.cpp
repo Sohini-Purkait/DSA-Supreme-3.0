@@ -37,6 +37,7 @@ void solve(Node* head, int& carry){
 Node* add1(Node* head,int &carry){
     solve(head, carry);
     if(carry){
+        //insert at head
         Node* newHead = new Node(carry);
         newHead -> next = head;
         head  = newHead;
